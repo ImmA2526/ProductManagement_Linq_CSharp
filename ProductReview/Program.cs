@@ -37,6 +37,7 @@ namespace ProductReviews
             display.TopRecords(list);
             display.SelectedRecords(list);
             display.CountRecord(list);
+            display.RetrieveAnd_Review(list);
         }
     }
 }

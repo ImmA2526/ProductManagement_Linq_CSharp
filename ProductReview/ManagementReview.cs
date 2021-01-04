@@ -49,6 +49,20 @@ namespace ProductReviews
         }
 
         /// <summary>
+        /// UC 5 Retrieves the review.
+        /// </summary>
+        /// <param name="listProductReview">The list product review.</param>
+        public void RetrieveAnd_Review(List<ProductReview> listProductReview)
+        {
+            var recordedData = listProductReview.Select(x => new { ProductID = x.ProductId, Review = x.Review });
+            Console.WriteLine("ID with Review");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ProductID + "--------" + list.Review);
+            }
+        }
+
+        /// <summary>
         /// Displays the record.
         /// </summary>
         /// <param name="record">The record.</param>
