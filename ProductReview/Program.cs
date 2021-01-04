@@ -53,6 +53,7 @@ namespace ProductReviews
             {
                 data.Rows.Add(table.ProductId,table.UserId,table.Rating,table.Review,table.isLike);
             }
+            display.RetrieveRecordsWithisLikeTrue(data);
         }
     }
 }

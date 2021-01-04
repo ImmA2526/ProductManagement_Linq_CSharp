@@ -107,6 +107,23 @@ namespace ProductReviews
             dataTable.Columns.Add(tableColumn5);
             return dataTable;
         }
+
+        /// <summary>
+        /// UC 9 Retrieves the records withis like true.
+        /// </summary>
+        /// <param name="table">The table.</param>
+        public void RetrieveRecordsWithisLikeTrue(DataTable table)
+        {
+            var recordedData = from productReviews in table.AsEnumerable()
+                               where (productReviews.Field<bool>("isLike") == true)
+                               select productReviews;
+            Console.WriteLine("Records with isLike=true are :-");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine("ProductID:- " + list.Field<int>("ProductID") + " " + "UserID:- " + list.Field<int>("UserID")
+                    + " " + "Rating:- " + list.Field<double>("Rating") + " " + "Review:- " + list.Field<string>("Review") + " " + "isLike:- " + list.Field<bool>("isLike"));
+            }
+        }
     
         /// <summary>
         /// Displays the record.
