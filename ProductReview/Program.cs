@@ -6,7 +6,7 @@ namespace ProductReviews
     class Program
     {
         /// <summary>
-        /// UC 1 Create List of Product Review
+        /// UC. 1 Create List of Product Review
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
