@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ProductReviews
 {
@@ -34,7 +35,10 @@ namespace ProductReviews
             new ProductReview() { ProductId = 16, UserId = 1, Rating = 3, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 17, UserId = 1, Rating = 3, Review = "Bad", isLike=false },
             new ProductReview() { ProductId = 18, UserId = 1, Rating = 3.5, Review = "Good", isLike=true },
-            new ProductReview() { ProductId = 18, UserId = 1, Rating = 3.5, Review = "Good", isLike=true }
+            new ProductReview() { ProductId = 18, UserId = 1, Rating = 3.5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 19, UserId = 1, Rating = 2.5, Review = "Bad", isLike=false },
+            new ProductReview() { ProductId = 10, UserId = 20, Rating = 2, Review = "Bad", isLike=false }
+
             };
           
             ManagementReview display = new ManagementReview();
@@ -43,6 +47,12 @@ namespace ProductReviews
             display.CountRecord(list);
             display.RetrieveAnd_Review(list);
             display.Skip_Five_Records(list);
+
+            DataTable data = display.CreateTable(list);
+            foreach (var table in list)
+            {
+                data.Rows.Add(table.ProductId,table.UserId,table.Rating,table.Review,table.isLike);
+            }
         }
     }
 }
