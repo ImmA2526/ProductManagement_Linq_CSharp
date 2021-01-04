@@ -34,8 +34,9 @@ namespace ProductReviews
             };
           
             ManagementReview display = new ManagementReview();
-            //display.TopRecords(list);
+            display.TopRecords(list);
             display.SelectedRecords(list);
+            display.CountRecord(list);
         }
     }
 }

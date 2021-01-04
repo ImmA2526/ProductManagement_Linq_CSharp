@@ -17,7 +17,7 @@ namespace ProductReviews
                                 orderby productReviews.Rating descending
                                 select productReviews).Take(3).ToList();
 
-           // DisplayRecord((List<ProductReview>)recordedData);
+           DisplayRecord((List<ProductReview>)recordedData);
         }
 
         /// <summary>
@@ -32,6 +32,20 @@ namespace ProductReviews
                                select productReviews).ToList();
             Console.WriteLine("Rating greater than 3 with product id of 1,4 or 9 :-");
             DisplayRecord((List<ProductReview>)recordedData);
+        }
+
+        /// <summary>
+        /// Uc 4 Count The Record.
+        /// </summary>
+        /// <param name="listProductReview">The list product review.</param>
+        public void CountRecord(List<ProductReview> listProductReview)
+        {
+            var recordData = listProductReview.GroupBy(x => x.ProductId).Select(x => new { ProductID = x.Key, Count = x.Count() });
+            Console.WriteLine("\nResult for Records Grouped By ProductID");
+            foreach (var list in recordData)
+            {
+                Console.WriteLine(list.ProductID + "-----" + list.Count);
+            }
         }
 
         /// <summary>
