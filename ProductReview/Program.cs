@@ -32,9 +32,10 @@ namespace ProductReviews
             new ProductReview() { ProductId = 14, UserId = 1, Rating = 5, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 15, UserId = 1, Rating = 5, Review = "Good", isLike=true }
             };
-        
+          
             ManagementReview display = new ManagementReview();
-            display.TopRecords(list);
+            //display.TopRecords(list);
+            display.SelectedRecords(list);
         }
     }
 }
