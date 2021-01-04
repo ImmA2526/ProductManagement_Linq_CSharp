@@ -63,6 +63,19 @@ namespace ProductReviews
         }
 
         /// <summary>
+        /// UC 6 Skip Five Record .
+        /// </summary>
+        /// <param name="listProductReview">The list product review.</param>
+        public void Skip_Five_Records(List<ProductReview> listProductReview)
+        {
+            var recordedData = (from productReviews in listProductReview
+                                orderby productReviews.Rating descending
+                                select productReviews).Skip(5).ToList();
+            Console.WriteLine("Top Records skiping top 5 rated records- ");
+            DisplayRecord((List<ProductReview>)recordedData);
+        }
+
+        /// <summary>
         /// Displays the record.
         /// </summary>
         /// <param name="record">The record.</param>

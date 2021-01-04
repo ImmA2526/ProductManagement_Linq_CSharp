@@ -30,7 +30,11 @@ namespace ProductReviews
             new ProductReview() { ProductId = 12, UserId = 1, Rating = 5, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 13, UserId = 1, Rating = 5, Review = "Bad", isLike=true },
             new ProductReview() { ProductId = 14, UserId = 1, Rating = 5, Review = "Good", isLike=true },
-            new ProductReview() { ProductId = 15, UserId = 1, Rating = 5, Review = "Good", isLike=true }
+            new ProductReview() { ProductId = 15, UserId = 1, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 16, UserId = 1, Rating = 3, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 17, UserId = 1, Rating = 3, Review = "Bad", isLike=false },
+            new ProductReview() { ProductId = 18, UserId = 1, Rating = 3.5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 18, UserId = 1, Rating = 3.5, Review = "Good", isLike=true }
             };
           
             ManagementReview display = new ManagementReview();
@@ -38,6 +42,7 @@ namespace ProductReviews
             display.SelectedRecords(list);
             display.CountRecord(list);
             display.RetrieveAnd_Review(list);
+            display.Skip_Five_Records(list);
         }
     }
 }
