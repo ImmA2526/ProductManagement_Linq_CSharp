@@ -140,10 +140,22 @@ namespace ProductReviews
         }
 
         /// <summary>
-        /// Displays the record.
+        /// UC  11Gets the nice review.
         /// </summary>
-        /// <param name="record">The record.</param>
-        public void DisplayRecord(List<ProductReview>record)
+        public void GetNiceReview(List<ProductReview> listproductReview)
+        {
+            Console.WriteLine("Get Nice Messege Review:- ");
+            var recordData = (from ProductReview in listproductReview
+                             where (ProductReview.Review.Equals("Nice"))
+                             select ProductReview).ToList();
+            DisplayRecord((List<ProductReview>) recordData);
+        }
+
+            /// <summary>
+            /// Displays the record.
+            /// </summary>
+            /// <param name="record">The record.</param>
+            public void DisplayRecord(List<ProductReview> record)
         {
             foreach (var lists in record)
             {
