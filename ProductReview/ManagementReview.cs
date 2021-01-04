@@ -151,11 +151,24 @@ namespace ProductReviews
             DisplayRecord((List<ProductReview>) recordData);
         }
 
-            /// <summary>
-            /// Displays the record.
-            /// </summary>
-            /// <param name="record">The record.</param>
-            public void DisplayRecord(List<ProductReview> record)
+        /// <summary>
+        /// UC  12Gets the nice review.
+        /// </summary>
+        public void GetRecord_ByUserID(List<ProductReview> listproductReview)
+        {
+            Console.WriteLine("User ID 10 Record ");
+            var recordData = (from ProductReview in listproductReview
+                              where (ProductReview.UserId==10)
+                              orderby ProductReview.Rating descending
+                              select ProductReview).ToList();
+            DisplayRecord((List<ProductReview>)recordData);
+        }
+
+        /// <summary>
+        /// Displays the record.
+        /// </summary>
+        /// <param name="record">The record.</param>
+        public void DisplayRecord(List<ProductReview> record)
         {
             foreach (var lists in record)
             {

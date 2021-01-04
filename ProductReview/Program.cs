@@ -17,11 +17,11 @@ namespace ProductReviews
             List<ProductReview> list = new List<ProductReview>()
             {
             new ProductReview() {ProductId=1,UserId=1,Rating=5,Review="Good",isLike=true},
-            new ProductReview() { ProductId = 1, UserId = 1, Rating = 5, Review = "Good", isLike=true },
-            new ProductReview() { ProductId = 2, UserId = 1, Rating = 5, Review = "Good", isLike=true },
-            new ProductReview() { ProductId = 3, UserId = 1, Rating = 5, Review = "Good", isLike=true },
-            new ProductReview() { ProductId = 4, UserId = 1, Rating = 5, Review = "Good", isLike=true },
-            new ProductReview() { ProductId = 5, UserId = 1, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 1, UserId = 10, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 2, UserId = 10, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 3, UserId = 10, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 4, UserId = 10, Rating = 5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 5, UserId = 10, Rating = 5, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 6, UserId = 1, Rating = 5, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 7, UserId = 1, Rating = 5, Review = "Good", isLike=false},
             new ProductReview() { ProductId = 8, UserId = 1, Rating = 1.5, Review = "Good", isLike=false },
@@ -32,11 +32,11 @@ namespace ProductReviews
             new ProductReview() { ProductId = 13, UserId = 1, Rating = 5, Review = "Bad", isLike=true },
             new ProductReview() { ProductId = 14, UserId = 1, Rating = 5, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 15, UserId = 1, Rating = 5, Review = "Good", isLike=true },
-            new ProductReview() { ProductId = 16, UserId = 1, Rating = 3, Review = "Good", isLike=true },
-            new ProductReview() { ProductId = 17, UserId = 1, Rating = 3, Review = "Bad", isLike=false },
-            new ProductReview() { ProductId = 18, UserId = 1, Rating = 3.5, Review = "Good", isLike=true },
-            new ProductReview() { ProductId = 18, UserId = 1, Rating = 3.5, Review = "Good", isLike=true },
-            new ProductReview() { ProductId = 19, UserId = 1, Rating = 2.5, Review = "Bad", isLike=false },
+            new ProductReview() { ProductId = 16, UserId = 5, Rating = 3, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 17, UserId = 5, Rating = 3, Review = "Bad", isLike=false },
+            new ProductReview() { ProductId = 18, UserId = 5, Rating = 3.5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 18, UserId = 5, Rating = 3.5, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 19, UserId = 10, Rating = 2.5, Review = "Bad", isLike=false },
             new ProductReview() { ProductId = 20, UserId = 20, Rating = 6, Review = "Nice", isLike=true },
             new ProductReview() { ProductId = 21, UserId = 1, Rating = 7, Review = "Nice", isLike=true },
             new ProductReview() { ProductId = 22, UserId = 1, Rating = 6.5, Review = "Nice", isLike=true },
@@ -52,14 +52,15 @@ namespace ProductReviews
             display.Skip_Five_Records(list);
 
             DataTable data = display.CreateTable(list);
-           /* foreach (var table in list)
+            foreach (var table in list)
             {
                 data.Rows.Add(table.ProductId,table.UserId,table.Rating,table.Review,table.isLike);
             }
             display.RetrieveRecordsWithisLikeTrue(data);
-           */
+           
             display.GetAvgRatings(list);
             display.GetNiceReview(list);
+            display.GetRecord_ByUserID(list);
         }
     }
 }
