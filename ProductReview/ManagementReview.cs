@@ -124,7 +124,21 @@ namespace ProductReviews
                     + " " + "Rating:- " + list.Field<double>("Rating") + " " + "Review:- " + list.Field<string>("Review") + " " + "isLike:- " + list.Field<bool>("isLike"));
             }
         }
-    
+
+        /// <summary>
+        /// UC 10 Gets the average ratings.
+        /// </summary>
+        /// <param name="listProductReview">The list product review.</param>
+        public void GetAvgRatings(List<ProductReview> listProductReview)
+        {
+            Console.WriteLine("Avg Rating per Productid-");
+            var recordedData = listProductReview.GroupBy(x => x.ProductId).Select(x => new { Pid = x.Key, Pavg = x.Average(y => y.Rating) });
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.Pid + "-----" + list.Pavg);
+            }
+        }
+
         /// <summary>
         /// Displays the record.
         /// </summary>
