@@ -16,7 +16,6 @@ namespace ProductReviews
             var recordedData = (from productReviews in listProductReview
                                 orderby productReviews.Rating descending
                                 select productReviews).Take(3).ToList();
-
            DisplayRecord((List<ProductReview>)recordedData);
         }
 
@@ -73,6 +72,20 @@ namespace ProductReviews
                                 select productReviews).Skip(5).ToList();
             Console.WriteLine("Top Records skiping top 5 rated records- ");
             DisplayRecord((List<ProductReview>)recordedData);
+        }
+
+        /// <summary>
+        /// UC 7 Retrive Data with Select.
+        /// </summary>
+        /// <param name="listProductReview">The list product review.</param>
+        public void Retrieve_Review_UsingSelect(List<ProductReview> listProductReview)
+        {
+            var recordedData = listProductReview.Select(x => new { ProductID = x.ProductId, Review = x.Review });
+            Console.WriteLine("ID with Review");
+            foreach (var list in recordedData)
+            {
+                Console.WriteLine(list.ProductID + "--------" + list.Review);
+            }
         }
 
         /// <summary>
